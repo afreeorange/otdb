@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bg-home {
+  --s: 50px;
+  --c1: #eee;
+  --c2: #fff;
+
+  --_g: #0000 24%,
+    var(--c2) 26% 34%, var(--c1) 36% 44%,
+    var(--c2) 46% 54%, var(--c1) 56% 64%,
+    var(--c2) 66% 74%, #0000 76%;
+  background:
+    radial-gradient(100% 100% at 100% 0, var(--_g)),
+    radial-gradient(100% 100% at 0 100%, var(--_g)),
+    radial-gradient(var(--c2) 14%, var(--c1) 16%) calc(var(--s)/2) calc(var(--s)/2);
+  background-size: var(--s) var(--s);
+}
+
+.bg-panel {
+  background-color: #ffffff;
+  background-size: 6px 6px;
+  background-image: repeating-linear-gradient(45deg, #f6d6d6 0, #f6d6d6 0.4px, #ffffff 0, #ffffff 50%);
+}
+
+.bg-behind-panel {
+  background-color: #ffffff;
+  opacity: 1;
+  background-image: radial-gradient(#cc0000 0.45px, transparent 0.45px), radial-gradient(#cc0000 0.45px, #ffffff 0.45px);
+  background-size: 14px 14px;
+  background-position: 0 0, 7px 7px;
+}
