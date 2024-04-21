@@ -2,7 +2,7 @@ import {
   VALID_TISSUES,
   VALID_DATASETS,
   VALID_SEARCH_TYPES,
-} from "../constants";
+} from "./constants";
 
 export type Dataset = (typeof VALID_DATASETS)[number];
 export type Tissue = (typeof VALID_TISSUES)[number];

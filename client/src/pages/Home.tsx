@@ -1,7 +1,7 @@
 import { Component } from "solid-js";
 import { A } from "@solidjs/router";
 import { Title } from "@solidjs/meta";
-import { FiArrowRight } from 'solid-icons/fi'
+import { FiArrowRight } from "solid-icons/fi";
 
 // @ts-ignore
 import { Motion } from "@motionone/solid";
