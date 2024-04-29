@@ -32,10 +32,13 @@ export const transcriptId = z.coerce
   });
 export type TranscriptId = z.infer<typeof transcriptId>;
 
-export const dataset = z.enum(VALID_DATASETS, {
-  required_error: "You must supply a dataset",
-  invalid_type_error: "Invalid dataset type. Please read the API Docs.",
-});
+export const dataset = z
+  .enum(VALID_DATASETS, {
+    required_error: "You must supply a dataset",
+    invalid_type_error: "Invalid dataset type. Please read the API Docs.",
+  })
+  .optional()
+  .default("CORE");
 
 export const tissue = z.enum(VALID_TISSUES, {
   required_error: "You must supply a tissue",
@@ -49,6 +52,8 @@ export const searchTerm = z
   .min(3, {
     message: "Search term must be at least 3 characters long",
   });
+
+export const searchLimit = z.coerce.number().min(10).optional().default(100);
 
 export type Strand = "+" | "-";
 
