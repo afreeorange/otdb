@@ -1,5 +1,7 @@
 # Search
 
+NOTE: The SQLite driver I'm using (`@libsql/client` from Turso) does not support a few things from the 'standard' driver. One example is aggregate queries (notably `STRING_AGG` or `GROUP_CONCAT`).
+
 ## Stage 1: Get Transcript IDs
 
 ### By Gene Symbol or Description
@@ -91,21 +93,22 @@ Chromosome number
 
 ```sql
 SELECT
-    d.transcript_id,
-    d.tissue,
-    d.rma,
-    d.rma_glaucoma,
-    d.plier,
-    d.plier_glaucoma
+  d.transcript_id,
+  d.tissue,
+  d.rma,
+  d.rma_glaucoma,
+  d.plier,
+  d.plier_glaucoma
 FROM
-    data_expression_transcripts d
+  data_expression_transcripts d
 WHERE
-    d.transcript_id IN (2941632, 2957499, 3093259, 3130823)
+  d.transcript_id = 2941632
 AND
-    d.dataset = "CORE"
+  d.dataset = 'CORE'
 ORDER BY
-    d.transcript_id,
-    d.tissue
+  d.transcript_id,
+  d.tissue
+;
 ```
 
 ### Alternate Splicing
@@ -122,11 +125,12 @@ FROM
   LEFT JOIN annotations_probesets a
   ON d.transcript_id = a.transcript_id
 WHERE
-  a.transcript_id IN (2941632, 2957499, 3093259, 3130823)
+  a.transcript_id = 2941632
   AND d.dataset = "CORE"
 ORDER BY
   d.tissue,
   d.probeset_id
+;
 ```
 
 ### Expression by Probeset by Transcript by Tissue
@@ -148,7 +152,7 @@ FROM
 WHERE
   transcript_id = 2941632
 ORDER BY
-  accession
+  gene_accession
 ;
 ```
 
@@ -232,15 +236,15 @@ ORDER BY
 ```sql
 SELECT DISTINCT
   transcript_id,
-  STRING_AGG(accession,",") AS accessions,
-  STRING_AGG(swissprot_accession, ",") AS swissprots
+  accession,
+  swissprot_accession
 FROM
-  annotations_transcripts_swissprot s
+  annotations_transcripts_swissprot
 WHERE
   transcript_id = 2941632
   AND swissprot_accession != ''
 GROUP BY
-  s.transcript_id
+  transcript_id
 ;
 ```
 
@@ -249,8 +253,8 @@ GROUP BY
 ```sql
 SELECT DISTINCT
   u.unigene_id,
-  STRING_AGG(e.unigene_expr, ",") as expressions,
-  STRING_AGG(u.accession, ",") AS accessions
+  e.unigene_expr,
+  u.accession
 FROM
   annotations_transcripts_unigene u
   INNER JOIN annotations_transcripts_unigene_expression e
@@ -279,25 +283,11 @@ INNER JOIN
   annotations_transcripts_gene_assignments a
   ON d.transcript_id = a.transcript_id
 WHERE
-  d.tissue = "CHOROID"
-  AND d.dataset = "CORE"
+  d.tissue = 'CHOROID'
+  AND d.dataset = 'CORE'
   AND a.gene_symbol IS NOT NULL
 ORDER BY
   d.plier DESC
 LIMIT 100;
-```
-
----
-
-
-
-```sql
-
-```
-
-Now you annotate. For each transcript id,
-
-```sql
--- Get the Transcript expression data
-
 ;
+```

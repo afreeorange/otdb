@@ -1,25 +1,83 @@
-import { Router } from "express";
+import { serve } from "@hono/node-server";
+import { Hono } from "hono";
 
-import affymetrixRouter from "./annotations/affymetrix";
-import transcriptRouter from "./annotations/transcript";
+import packageJson from "../../package.json";
+import q from "../db/queries";
+import { DEFAULT_PORT, Dataset, Tissue } from "../definitions";
 
-import alternateSplicingRouter from "./expression/alternateSplicing";
-import tissueRouter from "./expression/tissue";
+const app = new Hono();
 
-import geneRouter from "./search/gene";
-import mrnaRouter from "./search/mrna";
-import transcriptIdRouter from "./search/transcriptId";
+/** ----------------------------- Annotations ----------------------------- */
 
-const router = Router();
+(
+  [
+    "gene",
+    "go",
+    "mrna",
+    "pathway",
+    "proteinDomains",
+    "swissprot",
+    "unigene",
+  ] as (keyof typeof q.annotations)[]
+).forEach((_) => {
+  app.get(`/annotations/${_}/:transcriptId`, async (c) =>
+    c.json({
+      result: await q.annotations[_](parseInt(c.req.param("transcriptId"))),
+    })
+  );
+});
 
-router.use("/search/gene", geneRouter);
-router.use("/search/mrna", mrnaRouter);
-router.use("/search/transcript_id", transcriptIdRouter);
+/** ------------------------------ Expression ------------------------------ */
 
-router.use("/expression/alternate_splicing", alternateSplicingRouter);
-router.use("/expression/tissue", tissueRouter);
+app.get(`/expression/alternateSplicing/:transcriptId`, async (c) =>
+  c.json({
+    result: await q.expression.alternateSplicing(
+      parseInt(c.req.param("transcriptId")),
+      c.req.query("dataset") as Dataset
+    ),
+  })
+);
 
-router.use("/annotations/affymetrix", affymetrixRouter);
-router.use("/annotations/transcript", transcriptRouter);
+app.get(`/expression/tissue/:tissue`, async (c) =>
+  c.json({
+    result: await q.expression.tissue(
+      c.req.param("tissue") as Tissue,
+      c.req.query("dataset") as Dataset,
+      c.req.query("limit") ? parseInt(c.req.query("limit")!) : undefined
+    ),
+  })
+);
 
-export default router;
+/** -------------------------------- Search -------------------------------- */
+
+app.get(`/search/gene/:term`, async (c) =>
+  c.json({
+    result: await q.search.gene(c.req.param("term")),
+  })
+);
+
+app.get(`/search/mrna/:term`, async (c) =>
+  c.json({
+    result: await q.search.mrna(c.req.param("term")),
+  })
+);
+
+app.get(`/search/transcript/:transcriptId`, async (c) =>
+  c.json({
+    result: await q.search.transcript(parseInt(c.req.param("transcriptId"))),
+  })
+);
+
+/** -------------------------------- Server -------------------------------- */
+
+app.get(`/api`, async (c) =>
+  c.text(`Welcome to the OTDB API!\rv${packageJson.version}`)
+);
+
+const port = process.env.PORT ? parseInt(process.env.PORT) : DEFAULT_PORT;
+console.log(`⚡️ OTDB Server is running at http://localhost:${port}`);
+
+serve({
+  fetch: app.fetch,
+  port,
+});

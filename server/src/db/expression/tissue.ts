@@ -1,51 +1,47 @@
-/**
- * Shows Gene Expression by Tissue and by Dataset
- */
+import type { Row } from "@libsql/client";
+import { Dataset, Tissue } from "../../definitions";
+import client from "../client";
 
-import type { Client } from "pg";
-import q from "..";
-import { Dataset, Tissue } from "../../models/types";
-
-type Row = {
-  geneSymbol: string;
-  geneTitle: string;
-  plier: number;
-  plierGlaucoma: number;
-  transcriptId: number;
-};
-
-export type ExpressionByTissue = {
-  gene: {
-    name: string;
-    description: string;
-  };
-  plier: number;
-  plierGlaucoma: number;
-  transcriptId: number;
-};
-
-const sql = `
+export const sql = `
 SELECT DISTINCT
-  a.gene_symbol AS "geneName",
-  a.gene_title AS "geneDescription",
-  d.plier as "plier",
-  d.plier_glaucoma as "plierGlaucoma",
-  d.transcript_id as "transcriptId"
+  d.tissue,
+  a.gene_symbol,
+  a.gene_title,
+  d.plier,
+  d.plier_glaucoma,
+  d.transcript_id
 FROM
   data_expression_transcripts d
 INNER JOIN
   annotations_transcripts_gene_assignments a
   ON d.transcript_id = a.transcript_id
 WHERE
-  d.tissue = $1::text
-  AND d.dataset = $2::text
+  d.tissue = ?
+  AND d.dataset = ?
   AND a.gene_symbol IS NOT NULL
 ORDER BY
   d.plier DESC
+LIMIT ?;
+;
 `;
 
-export default async (
-  c: Client,
-  tissue: Tissue = "CHOROID",
-  dataset: Dataset = "CORE"
-) => await q<Row[]>(c, sql, tissue, dataset);
+interface Result extends Row {
+  tissue: Tissue;
+  gene_symbol: string;
+  gene_title: string;
+  plier: number;
+  plier_glaucoma: number;
+  transcript_id: number;
+}
+
+export const query = async (
+  tissue: Tissue,
+  dataset: Dataset = "CORE",
+  limit: number = 100
+): Promise<Result[]> =>
+  (
+    await client.execute({
+      sql,
+      args: [tissue, dataset, limit],
+    })
+  ).rows as Result[];
