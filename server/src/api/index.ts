@@ -5,9 +5,9 @@ import packageJson from "../../package.json";
 import q from "../db/queries";
 import { DEFAULT_PORT, Dataset, Tissue } from "../definitions";
 
-const app = new Hono();
-
 /** ----------------------------- Annotations ----------------------------- */
+
+const annotationsRoutes = new Hono();
 
 (
   [
@@ -20,7 +20,7 @@ const app = new Hono();
     "unigene",
   ] as (keyof typeof q.annotations)[]
 ).forEach((_) => {
-  app.get(`/annotations/${_}/:transcriptId`, async (c) =>
+  annotationsRoutes.get(`/${_}/:transcriptId`, async (c) =>
     c.json({
       result: await q.annotations[_](parseInt(c.req.param("transcriptId"))),
     })
@@ -29,7 +29,9 @@ const app = new Hono();
 
 /** ------------------------------ Expression ------------------------------ */
 
-app.get(`/expression/alternateSplicing/:transcriptId`, async (c) =>
+const expressionRoutes = new Hono();
+
+expressionRoutes.get(`/alternateSplicing/:transcriptId`, async (c) =>
   c.json({
     result: await q.expression.alternateSplicing(
       parseInt(c.req.param("transcriptId")),
@@ -38,7 +40,7 @@ app.get(`/expression/alternateSplicing/:transcriptId`, async (c) =>
   })
 );
 
-app.get(`/expression/tissue/:tissue`, async (c) =>
+expressionRoutes.get(`/tissue/:tissue`, async (c) =>
   c.json({
     result: await q.expression.tissue(
       c.req.param("tissue") as Tissue,
@@ -50,19 +52,21 @@ app.get(`/expression/tissue/:tissue`, async (c) =>
 
 /** -------------------------------- Search -------------------------------- */
 
-app.get(`/search/gene/:term`, async (c) =>
+const searchRoutes = new Hono();
+
+searchRoutes.get(`/gene/:term`, async (c) =>
   c.json({
     result: await q.search.gene(c.req.param("term")),
   })
 );
 
-app.get(`/search/mrna/:term`, async (c) =>
+searchRoutes.get(`/mrna/:term`, async (c) =>
   c.json({
     result: await q.search.mrna(c.req.param("term")),
   })
 );
 
-app.get(`/search/transcript/:transcriptId`, async (c) =>
+searchRoutes.get(`/transcript/:transcriptId`, async (c) =>
   c.json({
     result: await q.search.transcript(parseInt(c.req.param("transcriptId"))),
   })
@@ -70,9 +74,15 @@ app.get(`/search/transcript/:transcriptId`, async (c) =>
 
 /** -------------------------------- Server -------------------------------- */
 
-app.get(`/api`, async (c) =>
+const app = new Hono();
+
+app.get("/api", async (c) =>
   c.text(`Welcome to the OTDB API!\rv${packageJson.version}`)
 );
+
+app.route("/annotations", annotationsRoutes);
+app.route("/expressions", expressionRoutes);
+app.route("/search", searchRoutes);
 
 const port = process.env.PORT ? parseInt(process.env.PORT) : DEFAULT_PORT;
 console.log(`⚡️ OTDB Server is running at http://localhost:${port}`);
