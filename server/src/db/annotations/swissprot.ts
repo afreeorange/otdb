@@ -3,9 +3,9 @@ import client from "../client";
 
 export const sql = `
 SELECT DISTINCT
-  a.transcript_id,
+  a.transcript_id as transcriptId,
   a.accession,
-  a.swissprot_accession
+  a.swissprot_accession as swissprotAccession
 FROM
   annotations_transcripts_swissprot a
 WHERE
@@ -17,15 +17,15 @@ GROUP BY
 `;
 
 interface Result extends Row {
-  transcript_id: number;
+  transcriptId: number;
   accession: string;
-  swissprot_accession: string;
+  swissprotAccession: string;
 }
 
-export const query = async (transcript_id: number): Promise<Result[]> =>
+export const query = async (transcriptId: number): Promise<Result[]> =>
   (
     await client.execute({
       sql,
-      args: [transcript_id],
+      args: [transcriptId],
     })
   ).rows as Result[];

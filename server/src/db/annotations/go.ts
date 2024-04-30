@@ -1,5 +1,4 @@
 import type { Row } from "@libsql/client";
-import { groupBy } from "lodash-es";
 import client from "../client";
 
 export const sql = `
@@ -24,25 +23,46 @@ type GOAnnotation =
   | "MOLECULAR_FUNCTION";
 
 interface Result extends Row {
-  term: string;
-  annotation: string;
-  id: string;
+  annotation: GOAnnotation;
   evidence: string;
+  id: string;
+  term: string;
 }
 
 type TransformedResult = Record<
   GOAnnotation,
   {
-    term: string;
-    id: string;
     evidence: string;
-  }
+    id: string;
+    term: string;
+  }[]
 >;
 
-export const query = async (transcript_id: number): Promise<Result[]> =>
-  (
-    await client.execute({
-      sql,
-      args: [transcript_id],
-    })
-  ).rows as Result[];
+const transform = (result: Result[]): TransformedResult => {
+  const ret: TransformedResult = {
+    BIOLOGICAL_PROCESS: [],
+    CELLULAR_COMPONENT: [],
+    MOLECULAR_FUNCTION: [],
+  };
+
+  result.forEach((_) => {
+    ret[_.annotation].push({
+      evidence: _.evidence,
+      id: _.id,
+      term: _.term,
+    });
+  });
+
+  return ret;
+};
+
+export const query = async (
+  transcript_id: number
+): Promise<TransformedResult> => {
+  const { rows } = await client.execute({
+    sql,
+    args: [transcript_id],
+  });
+
+  return transform(rows as Result[]) as TransformedResult;
+};
