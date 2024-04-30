@@ -1,5 +1,6 @@
 import { validator } from "hono/validator";
 import { z, type ZodSchema } from "zod";
+import { Tissue, VALID_TISSUES } from "./definitions";
 
 const validate = (
   /**
@@ -29,3 +30,16 @@ export const validateParam = (s: ZodSchema, p: string) =>
 
 export const validateQuery = (s: ZodSchema, p: string) =>
   validate("query", s, p);
+
+export const makeTissueMap = (): Record<Tissue, unknown> => ({
+  CHOROID: {},
+  CILIARY_BODY: {},
+  CORNEA: {},
+  IRIS: {},
+  LENS: {},
+  OPTIC_NERVE: {},
+  OPTIC_NERVE_HEAD: {},
+  RETINA: {},
+  SCLERA: {},
+  TRABECULAR_MESHWORK: {},
+});

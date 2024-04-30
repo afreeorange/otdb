@@ -1,5 +1,7 @@
+import { groupBy } from "lodash-es";
+
 import type { Row } from "@libsql/client";
-import type { Strand } from "../../definitions";
+import type { SearchResult, Strand } from "../../definitions";
 import client from "../client";
 
 export const sql = `
@@ -8,7 +10,7 @@ SELECT DISTINCT
 	g.gene_symbol,
 	g.gene_title,
 	t.seqname,
-	t. "start",
+	t.start,
 	t.stop,
 	t.strand,
 	t.total_probes,
@@ -37,10 +39,13 @@ interface Result extends Row {
   total_probes: number;
 }
 
-export const query = async (term: string): Promise<Result[]> =>
-  (
+export const query = async (term: string): Promise<Result[]> => {
+  const __ = (
     await client.execute({
       sql,
       args: [`%${term}%`, `%${term}%`],
     })
-  ).rows as Result[];
+  ).rows;
+
+  return __ as Result[];
+};

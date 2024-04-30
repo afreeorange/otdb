@@ -1,4 +1,5 @@
 import type { Row } from "@libsql/client";
+import { groupBy } from "lodash-es";
 import client from "../client";
 
 export const sql = `
@@ -17,17 +18,26 @@ ORDER BY
 ;
 `;
 
-type GOTerm =
+type GOAnnotation =
   | "BIOLOGICAL_PROCESS"
   | "CELLULAR_COMPONENT"
   | "MOLECULAR_FUNCTION";
 
 interface Result extends Row {
+  term: string;
   annotation: string;
   id: string;
-  term: string;
   evidence: string;
 }
+
+type TransformedResult = Record<
+  GOAnnotation,
+  {
+    term: string;
+    id: string;
+    evidence: string;
+  }
+>;
 
 export const query = async (transcript_id: number): Promise<Result[]> =>
   (

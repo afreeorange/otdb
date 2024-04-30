@@ -57,6 +57,33 @@ export const searchLimit = z.coerce.number().min(10).optional().default(100);
 
 export type Strand = "+" | "-";
 
+export type SearchResult = Record<
+  string,
+  {
+    description: string;
+    transcriptId: number;
+    probes: number;
+
+    dataset: Dataset;
+
+    chromosome: {
+      number: number;
+      strand: Strand;
+      start: number;
+      stop: number;
+    };
+    expression: Record<
+      Tissue,
+      {
+        rma: number;
+        rmaGlaucoma: number;
+        plier: number;
+        plierGlaucoma: number;
+      }
+    >;
+  }
+>;
+
 /** ------------------------------------------------------------------------ */
 
 export const DEFAULT_PORT = 3000;
