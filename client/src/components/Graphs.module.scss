@@ -1,0 +1,15 @@
+.sparkline {
+  width: 100%;
+  height: 1.5em;
+
+  &:hover {
+    svg {
+      cursor: pointer;
+      background: #ddd;
+    }
+  }
+}
+
+.full {
+  height: 600px;
+}

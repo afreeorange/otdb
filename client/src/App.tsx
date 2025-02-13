@@ -3,8 +3,6 @@ import loadable from "@loadable/component";
 import type React from "react";
 
 import { ServiceProvider } from "./Providers";
-import Header from "./components/Header";
-import Shell from "./components/Shell";
 
 const About = loadable(() => import("./pages/About"));
 const Home = loadable(() => import("./pages/Home"));
@@ -18,13 +16,11 @@ const App: React.FC = () => (
 		<BrowserRouter>
 			<Routes>
 				<Route index element={<Home />} />
-				<Route path="/" element={<Shell />}>
-					<Route path="search/:term" element={<Search />} />
-					<Route path="tissues" element={<Tissues />} />
-					<Route path="about" element={<About />} />
-					<Route path="paper" element={<Paper />} />
-					<Route path="*" element={<NotFound />} />
-				</Route>
+				<Route path="/search/:term" element={<Search />} />
+				<Route path="/tissues" element={<Tissues />} />
+				<Route path="/about" element={<About />} />
+				<Route path="/paper" element={<Paper />} />
+				<Route path="*" element={<NotFound />} />
 			</Routes>
 		</BrowserRouter>
 	</ServiceProvider>

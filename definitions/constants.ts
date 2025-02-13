@@ -18,5 +18,5 @@ export const TISSUE_NAMES: Record<string, string> = {
 };
 
 export const VALID_TISSUES = Object.keys(TISSUE_NAMES);
-export const VALID_DATASETS = ["CORE", "EXTENDED", "FULL"];
-export const VALID_SEARCH_TYPES = ["gene", "mrna", "transcript_id"];
+export const VALID_DATASETS = ["CORE", "EXTENDED", "FULL"] as const;
+export const VALID_SEARCH_TYPES = ["gene", "mrna", "transcript_id"] as const;
