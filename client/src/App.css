@@ -1,0 +1,59 @@
+@import "tailwindcss";
+@theme {
+	--font-sans: var(--font);
+	--font-serif: var(--font);
+	--font-mono: var(--font);
+
+	--color-primary: red;
+}
+
+/*
+Reference:
+https://github.com/saadeghi/daisyui/discussions/3246#discussion-7344659
+*/
+@plugin "daisyui";
+
+/* -------------------------------------------------------------------- */
+
+:root {
+	--font: "DIN", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+		"Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.bg-home {
+	--s: 50px;
+	--c1: #eee;
+	--c2: #fff;
+
+	--_g:
+		#0000 24%, var(--c2) 26% 34%, var(--c1) 36% 44%, var(--c2) 46% 54%,
+		var(--c1) 56% 64%, var(--c2) 66% 74%, #0000 76%;
+	background: radial-gradient(100% 100% at 100% 0, var(--_g)),
+		radial-gradient(100% 100% at 0 100%, var(--_g)),
+		radial-gradient(var(--c2) 14%, var(--c1) 16%) calc(var(--s) / 2)
+		calc(var(--s) / 2);
+	background-size: var(--s) var(--s);
+}
+
+.bg-panel {
+	background-color: #ffffff;
+	background-size: 6px 6px;
+	background-image: repeating-linear-gradient(
+		45deg,
+		var(--color-primary) 0,
+		var(--color-primary) 0.4px,
+		#ffffff 0,
+		#ffffff 50%
+	);
+}
+
+.bg-behind-panel {
+	background-color: #ffffff;
+	opacity: 1;
+	background-image: radial-gradient(
+			var(--color-primary) 0.45px,
+			transparent 0.45px
+		), radial-gradient(var(--color-primary) 0.45px, #ffffff 0.45px);
+	background-size: 12px 12px;
+	background-position: 0 0, 7px 7px;
+}

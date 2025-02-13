@@ -1,0 +1,702 @@
+[
+	{
+		"gene": "ND3",
+		"geneDescription": "NADH dehydrogenase, subunit 3 (complex I)",
+		"plier": 2413.36,
+		"plierGlaucoma": 1998.38,
+		"transcriptId": 4037652
+	},
+	{
+		"gene": "SH3KBP1",
+		"geneDescription": "SH3-domain kinase binding protein 1",
+		"plier": 2413.36,
+		"plierGlaucoma": 1998.38,
+		"transcriptId": 4037652
+	},
+	{
+		"gene": "PLP1",
+		"geneDescription": "proteolipid protein 1",
+		"plier": 2159.08,
+		"plierGlaucoma": 1938.16,
+		"transcriptId": 3985717
+	},
+	{
+		"gene": "SBDS",
+		"geneDescription": "Shwachman-Bodian-Diamond syndrome",
+		"plier": 2069.27,
+		"plierGlaucoma": 1249.41,
+		"transcriptId": 3054165
+	},
+	{
+		"gene": "SBDSP1",
+		"geneDescription": "Shwachman-Bodian-Diamond syndrome pseudogene 1",
+		"plier": 2069.27,
+		"plierGlaucoma": 1249.41,
+		"transcriptId": 3054165
+	},
+	{
+		"gene": "DYNC1I2",
+		"geneDescription": "dynein, cytoplasmic 1, intermediate chain 2",
+		"plier": 1996.5,
+		"plierGlaucoma": 2064.35,
+		"transcriptId": 4037595
+	},
+	{
+		"gene": "HNRNPM",
+		"geneDescription": "heterogeneous nuclear ribonucleoprotein M",
+		"plier": 1996.5,
+		"plierGlaucoma": 2064.35,
+		"transcriptId": 4037595
+	},
+	{
+		"gene": "ND1",
+		"geneDescription": "NADH dehydrogenase, subunit 1 (complex I)",
+		"plier": 1996.5,
+		"plierGlaucoma": 2064.35,
+		"transcriptId": 4037595
+	},
+	{
+		"gene": "CLU",
+		"geneDescription": "clusterin",
+		"plier": 1984.7,
+		"plierGlaucoma": 2338.41,
+		"transcriptId": 3129065
+	},
+	{
+		"gene": "SPARCL1",
+		"geneDescription": "SPARC-like 1 (hevin)",
+		"plier": 1922.02,
+		"plierGlaucoma": 1250.19,
+		"transcriptId": 2777113
+	},
+	{
+		"gene": "LOC100129089",
+		"geneDescription": "hypothetical protein LOC100129089",
+		"plier": 1883.45,
+		"plierGlaucoma": 2924.78,
+		"transcriptId": 3814033
+	},
+	{
+		"gene": "MBP",
+		"geneDescription": "myelin basic protein",
+		"plier": 1883.45,
+		"plierGlaucoma": 2924.78,
+		"transcriptId": 3814033
+	},
+	{
+		"gene": "EIF4A2",
+		"geneDescription": "eukaryotic translation initiation factor 4A2",
+		"plier": 1754.96,
+		"plierGlaucoma": 996.497,
+		"transcriptId": 2656738
+	},
+	{
+		"gene": "SNORA4",
+		"geneDescription": "small nucleolar RNA, H/ACA box 4",
+		"plier": 1754.96,
+		"plierGlaucoma": 996.497,
+		"transcriptId": 2656738
+	},
+	{
+		"gene": "SNORA63",
+		"geneDescription": "small nucleolar RNA, H/ACA box 63",
+		"plier": 1754.96,
+		"plierGlaucoma": 996.497,
+		"transcriptId": 2656738
+	},
+	{
+		"gene": "SNORA81",
+		"geneDescription": "small nucleolar RNA, H/ACA box 81",
+		"plier": 1754.96,
+		"plierGlaucoma": 996.497,
+		"transcriptId": 2656738
+	},
+	{
+		"gene": "SNORD2",
+		"geneDescription": "small nucleolar RNA, C/D box 2",
+		"plier": 1754.96,
+		"plierGlaucoma": 996.497,
+		"transcriptId": 2656738
+	},
+	{
+		"gene": "MALAT1",
+		"geneDescription": "metastasis associated lung adenocarcinoma transcript 1 (non-protein coding)",
+		"plier": 1746.18,
+		"plierGlaucoma": 1513.83,
+		"transcriptId": 7385515
+	},
+	{
+		"gene": "ND5",
+		"geneDescription": "NADH dehydrogenase, subunit 5 (complex I)",
+		"plier": 1728.34,
+		"plierGlaucoma": 2265.56,
+		"transcriptId": 4037669
+	},
+	{
+		"gene": "ND4",
+		"geneDescription": "NADH dehydrogenase, subunit 4 (complex I)",
+		"plier": 1705.82,
+		"plierGlaucoma": 1712.8,
+		"transcriptId": 4037656
+	},
+	{
+		"gene": "ND4L",
+		"geneDescription": "NADH dehydrogenase, subunit 4L (complex I)",
+		"plier": 1705.82,
+		"plierGlaucoma": 1712.8,
+		"transcriptId": 4037656
+	},
+	{
+		"gene": "CD63",
+		"geneDescription": "CD63 molecule",
+		"plier": 1659.6,
+		"plierGlaucoma": 1256.73,
+		"transcriptId": 3457160
+	},
+	{
+		"gene": "TMSB10",
+		"geneDescription": "thymosin beta 10",
+		"plier": 1617.14,
+		"plierGlaucoma": 959.669,
+		"transcriptId": 2491271
+	},
+	{
+		"gene": "ALG9",
+		"geneDescription": "asparagine-linked glycosylation 9, alpha-1,2-mannosyltransferase homolog (S. cerevisiae)",
+		"plier": 1598.63,
+		"plierGlaucoma": 1464.11,
+		"transcriptId": 3391149
+	},
+	{
+		"gene": "CRYAB",
+		"geneDescription": "crystallin, alpha B",
+		"plier": 1598.63,
+		"plierGlaucoma": 1464.11,
+		"transcriptId": 3391149
+	},
+	{
+		"gene": "FDXACB1",
+		"geneDescription": "ferredoxin-fold anticodon binding domain containing 1",
+		"plier": 1598.63,
+		"plierGlaucoma": 1464.11,
+		"transcriptId": 3391149
+	},
+	{
+		"gene": "CLDND1",
+		"geneDescription": "claudin domain containing 1",
+		"plier": 1581.72,
+		"plierGlaucoma": 981.548,
+		"transcriptId": 2685908
+	},
+	{
+		"gene": "CPOX",
+		"geneDescription": "coproporphyrinogen oxidase",
+		"plier": 1581.72,
+		"plierGlaucoma": 981.548,
+		"transcriptId": 2685908
+	},
+	{
+		"gene": "SRPRB",
+		"geneDescription": "signal recognition particle receptor, B subunit",
+		"plier": 1547.12,
+		"plierGlaucoma": 1193.93,
+		"transcriptId": 2643217
+	},
+	{
+		"gene": "TF",
+		"geneDescription": "transferrin",
+		"plier": 1547.12,
+		"plierGlaucoma": 1193.93,
+		"transcriptId": 2643217
+	},
+	{
+		"gene": "S100B",
+		"geneDescription": "S100 calcium binding protein B",
+		"plier": 1537.42,
+		"plierGlaucoma": 1060.7,
+		"transcriptId": 3935486
+	},
+	{
+		"gene": "UBB",
+		"geneDescription": "ubiquitin B",
+		"plier": 1512.06,
+		"plierGlaucoma": 1012.32,
+		"transcriptId": 3712041
+	},
+	{
+		"gene": "S100A13",
+		"geneDescription": "S100 calcium binding protein A13",
+		"plier": 1486.45,
+		"plierGlaucoma": 832.735,
+		"transcriptId": 4045676
+	},
+	{
+		"gene": "HNRNPA2B1",
+		"geneDescription": "heterogeneous nuclear ribonucleoprotein A2/B1",
+		"plier": 1428.02,
+		"plierGlaucoma": 738.514,
+		"transcriptId": 3042421
+	},
+	{
+		"gene": "UBA52",
+		"geneDescription": "ubiquitin A-52 residue ribosomal protein fusion product 1",
+		"plier": 1423.81,
+		"plierGlaucoma": 1179.43,
+		"transcriptId": 3825201
+	},
+	{
+		"gene": "ND6",
+		"geneDescription": "NADH dehydrogenase, subunit 6 (complex I)",
+		"plier": 1406.3,
+		"plierGlaucoma": 1165,
+		"transcriptId": 4037708
+	},
+	{
+		"gene": "GJA1",
+		"geneDescription": "gap junction protein, alpha 1, 43kDa",
+		"plier": 1404.32,
+		"plierGlaucoma": 875.719,
+		"transcriptId": 2923661
+	},
+	{
+		"gene": "TUBB2B",
+		"geneDescription": "tubulin, beta 2B",
+		"plier": 1396.76,
+		"plierGlaucoma": 1626.04,
+		"transcriptId": 2939232
+	},
+	{
+		"gene": "APOD",
+		"geneDescription": "apolipoprotein D",
+		"plier": 1349.13,
+		"plierGlaucoma": 1328.58,
+		"transcriptId": 4054204
+	},
+	{
+		"gene": "RPS6",
+		"geneDescription": "ribosomal protein S6",
+		"plier": 1341.75,
+		"plierGlaucoma": 980.97,
+		"transcriptId": 3200689
+	},
+	{
+		"gene": "UBC",
+		"geneDescription": "ubiquitin C",
+		"plier": 1301.74,
+		"plierGlaucoma": 1047.22,
+		"transcriptId": 3476741
+	},
+	{
+		"gene": "HSP90AA1",
+		"geneDescription": "heat shock protein 90kDa alpha (cytosolic), class A member 1",
+		"plier": 1297.62,
+		"plierGlaucoma": 949.885,
+		"transcriptId": 3580179
+	},
+	{
+		"gene": "CHMP2A",
+		"geneDescription": "chromatin modifying protein 2A",
+		"plier": 1297.3,
+		"plierGlaucoma": 990.353,
+		"transcriptId": 3872983
+	},
+	{
+		"gene": "COX6C",
+		"geneDescription": "cytochrome c oxidase subunit VIc",
+		"plier": 1293.36,
+		"plierGlaucoma": 1183.61,
+		"transcriptId": 3146433
+	},
+	{
+		"gene": "SHFM1",
+		"geneDescription": "split hand/foot malformation (ectrodactyly) type 1",
+		"plier": 1290.78,
+		"plierGlaucoma": 765.113,
+		"transcriptId": 7385696
+	},
+	{
+		"gene": "CALM2",
+		"geneDescription": "calmodulin 2 (phosphorylase kinase, delta)",
+		"plier": 1273.42,
+		"plierGlaucoma": 872.454,
+		"transcriptId": 2551924
+	},
+	{
+		"gene": "ACTB",
+		"geneDescription": "actin, beta",
+		"plier": 1252.71,
+		"plierGlaucoma": 848.84,
+		"transcriptId": 3036924
+	},
+	{
+		"gene": "SPARC",
+		"geneDescription": "secreted protein, acidic, cysteine-rich (osteonectin)",
+		"plier": 1246.35,
+		"plierGlaucoma": 741.99,
+		"transcriptId": 2882098
+	},
+	{
+		"gene": "SEC61G",
+		"geneDescription": "Sec61 gamma subunit",
+		"plier": 1243.52,
+		"plierGlaucoma": 578.798,
+		"transcriptId": 3051395
+	},
+	{
+		"gene": "NCL",
+		"geneDescription": "nucleolin",
+		"plier": 1237.74,
+		"plierGlaucoma": 830.959,
+		"transcriptId": 2603460
+	},
+	{
+		"gene": "SNORA75",
+		"geneDescription": "small nucleolar RNA, H/ACA box 75",
+		"plier": 1237.74,
+		"plierGlaucoma": 830.959,
+		"transcriptId": 2603460
+	},
+	{
+		"gene": "SNORD20",
+		"geneDescription": "small nucleolar RNA, C/D box 20",
+		"plier": 1237.74,
+		"plierGlaucoma": 830.959,
+		"transcriptId": 2603460
+	},
+	{
+		"gene": "SNORD82",
+		"geneDescription": "small nucleolar RNA, C/D box 82",
+		"plier": 1237.74,
+		"plierGlaucoma": 830.959,
+		"transcriptId": 2603460
+	},
+	{
+		"gene": "HEPACAM",
+		"geneDescription": "hepatocyte cell adhesion molecule",
+		"plier": 1231.06,
+		"plierGlaucoma": 1306.22,
+		"transcriptId": 3354380
+	},
+	{
+		"gene": "HEPN1",
+		"geneDescription": "HEPACAM opposite strand 1",
+		"plier": 1231.06,
+		"plierGlaucoma": 1306.22,
+		"transcriptId": 3354380
+	},
+	{
+		"gene": "C7orf41",
+		"geneDescription": "chromosome 7 open reading frame 41",
+		"plier": 1228.22,
+		"plierGlaucoma": 875.255,
+		"transcriptId": 2995254
+	},
+	{
+		"gene": "RPL15",
+		"geneDescription": "ribosomal protein L15",
+		"plier": 1141.39,
+		"plierGlaucoma": 695.267,
+		"transcriptId": 2614120
+	},
+	{
+		"gene": "MYL6",
+		"geneDescription": "myosin, light chain 6, alkali, smooth muscle and non-muscle",
+		"plier": 1138.65,
+		"plierGlaucoma": 1477.44,
+		"transcriptId": 3417457
+	},
+	{
+		"gene": "PAFAH1B1",
+		"geneDescription": "platelet-activating factor acetylhydrolase 1b, regulatory subunit 1 (45kDa)",
+		"plier": 1130.57,
+		"plierGlaucoma": 1103.84,
+		"transcriptId": 3740126
+	},
+	{
+		"gene": "YWHAE",
+		"geneDescription": "tyrosine 3-monooxygenase/tryptophan 5-monooxygenase activation protein, epsilon polypeptide",
+		"plier": 1130.57,
+		"plierGlaucoma": 1103.84,
+		"transcriptId": 3740126
+	},
+	{
+		"gene": "NDUFA1",
+		"geneDescription": "NADH dehydrogenase (ubiquinone) 1 alpha subcomplex, 1, 7.5kDa",
+		"plier": 1125.19,
+		"plierGlaucoma": 947.294,
+		"transcriptId": 3988987
+	},
+	{
+		"gene": "ATP5I",
+		"geneDescription": "ATP synthase, H+ transporting, mitochondrial Fo complex, subunit E",
+		"plier": 1119.86,
+		"plierGlaucoma": 705.044,
+		"transcriptId": 2756497
+	},
+	{
+		"gene": "MYL5",
+		"geneDescription": "myosin, light chain 5, regulatory",
+		"plier": 1119.86,
+		"plierGlaucoma": 705.044,
+		"transcriptId": 2756497
+	},
+	{
+		"gene": "HSPA8",
+		"geneDescription": "heat shock 70kDa protein 8",
+		"plier": 1108.48,
+		"plierGlaucoma": 779.217,
+		"transcriptId": 3395416
+	},
+	{
+		"gene": "DPYSL2",
+		"geneDescription": "dihydropyrimidinase-like 2",
+		"plier": 1105.18,
+		"plierGlaucoma": 714.697,
+		"transcriptId": 3091077
+	},
+	{
+		"gene": "ATP13A5",
+		"geneDescription": "ATPase type 13A5",
+		"plier": 1065.78,
+		"plierGlaucoma": 2018.86,
+		"transcriptId": 4037638
+	},
+	{
+		"gene": "ATP6",
+		"geneDescription": "ATP synthase F0 subunit 6",
+		"plier": 1065.78,
+		"plierGlaucoma": 2018.86,
+		"transcriptId": 4037638
+	},
+	{
+		"gene": "ATP8",
+		"geneDescription": "ATP synthase F0 subunit 8",
+		"plier": 1065.78,
+		"plierGlaucoma": 2018.86,
+		"transcriptId": 4037638
+	},
+	{
+		"gene": "COX3",
+		"geneDescription": "cytochrome c oxidase III",
+		"plier": 1065.78,
+		"plierGlaucoma": 2018.86,
+		"transcriptId": 4037638
+	},
+	{
+		"gene": "TUBB4",
+		"geneDescription": "tubulin, beta 4",
+		"plier": 990.647,
+		"plierGlaucoma": 1267.15,
+		"transcriptId": 3847959
+	},
+	{
+		"gene": "SKP1",
+		"geneDescription": "S-phase kinase-associated protein 1",
+		"plier": 987.004,
+		"plierGlaucoma": 600.375,
+		"transcriptId": 2876011
+	},
+	{
+		"gene": "SSB",
+		"geneDescription": "Sjogren syndrome antigen B (autoantigen La)",
+		"plier": 980.014,
+		"plierGlaucoma": 603.436,
+		"transcriptId": 2514566
+	},
+	{
+		"gene": "AQP4",
+		"geneDescription": "aquaporin 4",
+		"plier": 940.957,
+		"plierGlaucoma": 590.886,
+		"transcriptId": 3802396
+	},
+	{
+		"gene": "TXNIP",
+		"geneDescription": "thioredoxin interacting protein",
+		"plier": 924.856,
+		"plierGlaucoma": 688.079,
+		"transcriptId": 2356115
+	},
+	{
+		"gene": "ZBED6",
+		"geneDescription": "zinc finger, BED-type containing 6",
+		"plier": 919.067,
+		"plierGlaucoma": 499.292,
+		"transcriptId": 2375810
+	},
+	{
+		"gene": "ZC3H11A",
+		"geneDescription": "zinc finger CCCH-type containing 11A",
+		"plier": 919.067,
+		"plierGlaucoma": 499.292,
+		"transcriptId": 2375810
+	},
+	{
+		"gene": "RPS20",
+		"geneDescription": "ribosomal protein S20",
+		"plier": 915.438,
+		"plierGlaucoma": 943.796,
+		"transcriptId": 3136129
+	},
+	{
+		"gene": "SNORD54",
+		"geneDescription": "small nucleolar RNA, C/D box 54",
+		"plier": 915.438,
+		"plierGlaucoma": 943.796,
+		"transcriptId": 3136129
+	},
+	{
+		"gene": "SCD",
+		"geneDescription": "stearoyl-CoA desaturase (delta-9-desaturase)",
+		"plier": 905.018,
+		"plierGlaucoma": 1084.53,
+		"transcriptId": 3260586
+	},
+	{
+		"gene": "B2M",
+		"geneDescription": "beta-2-microglobulin",
+		"plier": 902.735,
+		"plierGlaucoma": 853.857,
+		"transcriptId": 3592023
+	},
+	{
+		"gene": "THYN1",
+		"geneDescription": "thymocyte nuclear protein 1",
+		"plier": 902.73,
+		"plierGlaucoma": 614.402,
+		"transcriptId": 3399623
+	},
+	{
+		"gene": "PEBP1",
+		"geneDescription": "phosphatidylethanolamine binding protein 1",
+		"plier": 898.844,
+		"plierGlaucoma": 715.26,
+		"transcriptId": 3433796
+	},
+	{
+		"gene": "LOC100131530",
+		"geneDescription": "hypothetical LOC100131530",
+		"plier": 898.318,
+		"plierGlaucoma": 710.982,
+		"transcriptId": 3945133
+	},
+	{
+		"gene": "POLR2F",
+		"geneDescription": "polymerase (RNA) II (DNA directed) polypeptide F",
+		"plier": 898.318,
+		"plierGlaucoma": 710.982,
+		"transcriptId": 3945133
+	},
+	{
+		"gene": "NDUFS5",
+		"geneDescription": "NADH dehydrogenase (ubiquinone) Fe-S protein 5, 15kDa (NADH-coenzyme Q reductase)",
+		"plier": 890.993,
+		"plierGlaucoma": 376.507,
+		"transcriptId": 2331178
+	},
+	{
+		"gene": "RPL10",
+		"geneDescription": "ribosomal protein L10",
+		"plier": 890.993,
+		"plierGlaucoma": 376.507,
+		"transcriptId": 2331178
+	},
+	{
+		"gene": "CSDE1",
+		"geneDescription": "cold shock domain containing E1, RNA-binding",
+		"plier": 887.988,
+		"plierGlaucoma": 537.073,
+		"transcriptId": 2429277
+	},
+	{
+		"gene": "NRAS",
+		"geneDescription": "neuroblastoma RAS viral (v-ras) oncogene homolog",
+		"plier": 887.988,
+		"plierGlaucoma": 537.073,
+		"transcriptId": 2429277
+	},
+	{
+		"gene": "PTN",
+		"geneDescription": "pleiotrophin",
+		"plier": 883.792,
+		"plierGlaucoma": 611.105,
+		"transcriptId": 3074857
+	},
+	{
+		"gene": "NUCKS1",
+		"geneDescription": "nuclear casein kinase and cyclin-dependent kinase substrate 1",
+		"plier": 882.794,
+		"plierGlaucoma": 454.872,
+		"transcriptId": 2452637
+	},
+	{
+		"gene": "COX6B1",
+		"geneDescription": "cytochrome c oxidase subunit VIb polypeptide 1 (ubiquitous)",
+		"plier": 882.374,
+		"plierGlaucoma": 775.924,
+		"transcriptId": 3830649
+	},
+	{
+		"gene": "SPP1",
+		"geneDescription": "secreted phosphoprotein 1",
+		"plier": 881.309,
+		"plierGlaucoma": 583.57,
+		"transcriptId": 2735027
+	},
+	{
+		"gene": "HSP90B1",
+		"geneDescription": "heat shock protein 90kDa beta (Grp94), member 1",
+		"plier": 876.943,
+		"plierGlaucoma": 808.978,
+		"transcriptId": 3429312
+	},
+	{
+		"gene": "HSP90B3P",
+		"geneDescription": "heat shock protein 90kDa beta (Grp94), member 3 (pseudogene)",
+		"plier": 876.943,
+		"plierGlaucoma": 808.978,
+		"transcriptId": 3429312
+	},
+	{
+		"gene": "SON",
+		"geneDescription": "SON DNA binding protein",
+		"plier": 869.459,
+		"plierGlaucoma": 781.62,
+		"transcriptId": 3918696
+	},
+	{
+		"gene": "NEDD8",
+		"geneDescription": "neural precursor cell expressed, developmentally down-regulated 8",
+		"plier": 868.454,
+		"plierGlaucoma": 850.425,
+		"transcriptId": 3557986
+	},
+	{
+		"gene": "PSAP",
+		"geneDescription": "prosaposin",
+		"plier": 860.454,
+		"plierGlaucoma": 679.914,
+		"transcriptId": 3293762
+	},
+	{
+		"gene": "PRDX6",
+		"geneDescription": "peroxiredoxin 6",
+		"plier": 851.464,
+		"plierGlaucoma": 635.276,
+		"transcriptId": 2367743
+	},
+	{
+		"gene": "LAPTM4A",
+		"geneDescription": "lysosomal protein transmembrane 4 alpha",
+		"plier": 841.981,
+		"plierGlaucoma": 548.83,
+		"transcriptId": 2542737
+	},
+	{
+		"gene": "PRKAR1A",
+		"geneDescription": "protein kinase, cAMP-dependent, regulatory, type I, alpha (tissue specific extinguisher 1)",
+		"plier": 841.178,
+		"plierGlaucoma": 731.06,
+		"transcriptId": 3732885
+	}
+]

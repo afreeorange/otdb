@@ -1,0 +1,13 @@
+{
+	"name": "server",
+	"license": "MIT",
+	"private": true,
+	"type": "module",
+	"version": "0.0.0",
+	"scripts": {
+		"dev": "tsx watch index.ts"
+	},
+	"devDependencies": {
+		"definitions": "workspace:*"
+	}
+}
