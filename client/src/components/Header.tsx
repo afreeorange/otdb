@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { NavLink, useNavigate, useParams } from "react-router";
+import { NavLink, useLocation, useNavigate, useParams } from "react-router";
 import { FiArrowRight } from "react-icons/fi";
 import { HiOutlineDocumentText } from "react-icons/hi";
 import { TbDna, TbBulb } from "react-icons/tb";
@@ -53,6 +53,7 @@ const Nav = () => (
 
 const Header = () => {
   const navigate = useNavigate();
+  const loc = useLocation();
   const uriParams = useParams();
   const [{ type, dataset }, setSearchParams] = useSearchParams();
 
@@ -64,13 +65,14 @@ const Header = () => {
     setFormIsValid(!(!term || term.length < 3));
   }, [term]);
 
+  console.log(">>> header", loc);
+
   return (
     <div className="border-b px-2 py-1">
       <div className="flex">
         <TheOTDB />
 
         {/* Search Options */}
-
         <div
           className={clsx({
             "absolute left-12 top-10 z-10 w-xs rounded-lg border bg-base-100 p-2 shadow-2xl":
@@ -158,7 +160,7 @@ const Header = () => {
           className=" flex-1"
           onSubmit={() => {
             navigate(`/search/${term}?type=${type}&dataset=${dataset}`, {
-              relative: "path",
+              // relative: "path",
             });
             setSearchIsOpen(false);
           }}
@@ -178,8 +180,7 @@ const Header = () => {
               disabled={!formIsValid}
               onClick={() => {
                 navigate(`/search/${term}?type=${type}&dataset=${dataset}`, {
-                  relative: "path",
-                  state: { term, type, dataset },
+                  // relative: "path",
                 });
                 setSearchIsOpen(false);
               }}
@@ -188,6 +189,7 @@ const Header = () => {
             </button>
           </div>
         </form>
+        <h2>{JSON.stringify(loc)}</h2>
 
         <Nav />
       </div>
