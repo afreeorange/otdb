@@ -7,8 +7,16 @@ import {
 import { useQueryStates, parseAsStringEnum } from "nuqs";
 
 export const useSearchParams = () => {
-	return useQueryStates({
-		type: parseAsStringEnum<SearchType>(VALID_SEARCH_TYPES).withDefault("gene"),
-		dataset: parseAsStringEnum<Dataset>(VALID_DATASETS).withDefault("CORE"),
-	});
+	return useQueryStates(
+		{
+			type: parseAsStringEnum<SearchType>(VALID_SEARCH_TYPES).withDefault(
+				"gene",
+			),
+			dataset: parseAsStringEnum<Dataset>(VALID_DATASETS).withDefault("CORE"),
+		},
+		{
+			clearOnDefault: false,
+			history: "push",
+		},
+	);
 };

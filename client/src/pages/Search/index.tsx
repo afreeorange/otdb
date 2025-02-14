@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useLocation, useParams, useSearchParams } from "react-router";
+import { useLocation, useParams } from "react-router";
 import Shell from "../../components/Shell";
 import { trpc } from "../../services";
 import {
@@ -9,8 +9,11 @@ import {
   VALID_SEARCH_TYPES,
 } from "definitions";
 import SearchResult from "./Result";
+import { useSearchParams } from "../../hooks";
 
 export default () => {
+  return <h1>LOL</h1>;
+
   /**
    * Gather URI params and set some defaults in case we get junk.
    *
@@ -18,46 +21,50 @@ export default () => {
    * - The `type` must be valid.
    * - The `dataset` must be valid.
    */
-  const uriParams = useParams();
-  const [uriSearchParams, setUriSearchParams] = useSearchParams();
+  // const uriParams = useParams();
+  // const [{ type, dataset }, setSearchParams] = useSearchParams();
 
-  const loc = useLocation();
+  // let ret: React.ReactNode;
 
-  let ret: React.ReactNode;
+  // const term = uriParams.term;
+  // if (!term || term.length < 3) {
+  //   return (
+  //     <Shell>
+  //       <h1>Search term must be at least three characters</h1>
+  //     </Shell>
+  //   );
+  // }
 
-  const term = uriParams.term;
-  if (!term || term.length < 3) {
-    return (
-      <Shell>
-        <h1>Search term must be at least three characters</h1>
-      </Shell>
-    );
-  }
+  // return (
+  //   <Shell>
+  //     {term} {type} {dataset}
+  //   </Shell>
+  // );
 
-  const type = (uriSearchParams.get("type") || "gene") as SearchType;
-  if (!VALID_SEARCH_TYPES.includes(type)) {
-    return (
-      <Shell>
-        <h1>Invalid Search Type</h1>
-      </Shell>
-    );
-  }
+  // const type = (uriSearchParams.get("type") || "gene") as SearchType;
+  // if (!VALID_SEARCH_TYPES.includes(type)) {
+  //   return (
+  //     <Shell>
+  //       <h1>Invalid Search Type</h1>
+  //     </Shell>
+  //   );
+  // }
 
-  const dataset = (uriSearchParams.get("dataset") || "CORE") as Dataset;
-  if (!VALID_DATASETS.includes(dataset)) {
-    return (
-      <Shell>
-        <h1>Invalid Dataset Type</h1>
-      </Shell>
-    );
-  }
+  // const dataset = (uriSearchParams.get("dataset") || "CORE") as Dataset;
+  // if (!VALID_DATASETS.includes(dataset)) {
+  //   return (
+  //     <Shell>
+  //       <h1>Invalid Dataset Type</h1>
+  //     </Shell>
+  //   );
+  // }
 
-  return (
-    <Shell>
-      {term} {type} {dataset}
-      <pre>{JSON.stringify(loc, null, 2)}</pre>
-    </Shell>
-  );
+  // return (
+  //   <Shell>
+  //     {term} {type} {dataset}
+  //     <pre>{JSON.stringify(loc, null, 2)}</pre>
+  //   </Shell>
+  // );
 
   // /**
   //  * Update the search params with (now) valid values.
