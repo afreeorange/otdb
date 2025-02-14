@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import { NavLink, useNavigate } from "react-router";
+import { NavLink, useNavigate, useParams } from "react-router";
 import { FiArrowRight } from "react-icons/fi";
 import { HiOutlineDocumentText } from "react-icons/hi";
 import { TbDna, TbBulb } from "react-icons/tb";
-import type { Dataset, SearchType } from "../../../definitions";
 import clsx from "clsx";
+import { useSearchParams } from "../hooks";
 
 export const NAVIGATION: {
   icon: JSX.Element;
@@ -53,9 +53,10 @@ const Nav = () => (
 
 const Header = () => {
   const navigate = useNavigate();
-  const [term, setTerm] = useState("");
-  const [type, setType] = useState<SearchType>("gene");
-  const [dataset, setDataset] = useState<Dataset>("CORE");
+  const uriParams = useParams();
+  const [{ type, dataset }, setSearchParams] = useSearchParams();
+
+  const [term, setTerm] = useState(uriParams.term || "");
   const [searchIsOpen, setSearchIsOpen] = useState(false);
   const [formIsValid, setFormIsValid] = useState(false);
 
@@ -90,7 +91,7 @@ const Header = () => {
               <button
                 type="button"
                 onClick={() => {
-                  setType("gene");
+                  setSearchParams({ type: "gene" });
                 }}
                 className={clsx({
                   "btn btn-outline join-item": true,
@@ -102,7 +103,7 @@ const Header = () => {
               <button
                 type="button"
                 onClick={() => {
-                  setType("mrna");
+                  setSearchParams({ type: "mrna" });
                 }}
                 className={clsx({
                   "btn btn-outline join-item": true,
@@ -114,7 +115,7 @@ const Header = () => {
               <button
                 type="button"
                 onClick={() => {
-                  setType("transcript_id");
+                  setSearchParams({ type: "transcript_id" });
                 }}
                 className={clsx({
                   "btn btn-outline join-item": true,
@@ -131,7 +132,7 @@ const Header = () => {
           <div className="join join-vertical w-full">
             <button
               type="button"
-              onClick={() => setDataset("CORE")}
+              onClick={() => setSearchParams({ dataset: "CORE" })}
               className={clsx({
                 "btn btn-outline join-item": true,
                 "font-normal": dataset !== "CORE",
@@ -141,7 +142,7 @@ const Header = () => {
             </button>
             <button
               type="button"
-              onClick={() => setDataset("EXTENDED")}
+              onClick={() => setSearchParams({ dataset: "EXTENDED" })}
               className={clsx({
                 "btn btn-outline join-item": true,
                 "font-normal": dataset !== "EXTENDED",
@@ -178,6 +179,7 @@ const Header = () => {
               onClick={() => {
                 navigate(`/search/${term}?type=${type}&dataset=${dataset}`, {
                   relative: "path",
+                  state: { term, type, dataset },
                 });
                 setSearchIsOpen(false);
               }}
