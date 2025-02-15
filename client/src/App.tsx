@@ -17,12 +17,12 @@ const App: React.FC = () => (
   <ServiceProvider>
     <BrowserRouter>
       <Routes>
+        <Route index element={<Home />} />
         <Route path="/" element={<Shell />}>
-          <Route index element={<Home />} />
-          <Route path="/search/:term" element={<Search />} />
-          <Route path="/tissues" element={<Tissues />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/paper" element={<Paper />} />
+          <Route path="search/:term" element={<Search />} />
+          <Route path="tissues" element={<Tissues />} />
+          <Route path="about" element={<About />} />
+          <Route path="paper" element={<Paper />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

@@ -58,14 +58,12 @@ const Header = () => {
   const [{ type, dataset }, setSearchParams] = useSearchParams();
 
   const [term, setTerm] = useState(uriParams.term || "");
-  const [searchIsOpen, setSearchIsOpen] = useState(false);
+  const [searchIsOpen, setSearchIsOpen] = useState(true);
   const [formIsValid, setFormIsValid] = useState(false);
 
   useEffect(() => {
     setFormIsValid(!(!term || term.length < 3));
   }, [term]);
-
-  console.log(">>> header", loc);
 
   return (
     <div className="border-b px-2 py-1">
@@ -180,7 +178,7 @@ const Header = () => {
               disabled={!formIsValid}
               onClick={() => {
                 navigate(`/search/${term}?type=${type}&dataset=${dataset}`, {
-                  // relative: "path",
+                  relative: "path",
                 });
                 setSearchIsOpen(false);
               }}
