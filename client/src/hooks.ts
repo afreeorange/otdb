@@ -16,7 +16,7 @@ export const useSearchParams = () => {
 		},
 		{
 			clearOnDefault: false,
-			history: "push",
+			// history: "push",
 		},
 	);
 };
