@@ -1,6 +1,7 @@
 import type { TranscriptID } from "definitions";
 import Annotation from "../../../components/Annotation";
 import { trpc } from "../../../services";
+import MissingData from "../../../components/MissingData";
 
 const Component = ({ transcriptId }: { transcriptId: TranscriptID }) => {
 	const { isLoading, data } =
@@ -11,7 +12,7 @@ const Component = ({ transcriptId }: { transcriptId: TranscriptID }) => {
 	}
 
 	if (!data || data?.length === 0) {
-		return <h1>No Protein Domains Found</h1>;
+		return <MissingData message="No protein domains found" />;
 	}
 
 	return (

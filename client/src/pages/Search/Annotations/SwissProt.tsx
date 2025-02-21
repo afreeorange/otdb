@@ -1,12 +1,17 @@
 import type { TranscriptID } from "definitions";
 import Annotation from "../../../components/Annotation";
 import { trpc } from "../../../services";
+import MissingData from "../../../components/MissingData";
 
 const Component = ({ transcriptId }: { transcriptId: TranscriptID }) => {
 	const { isLoading, data } = trpc.annotations.swissprot.useQuery(transcriptId);
 
 	if (isLoading || !data) {
 		return <h1>Loading</h1>;
+	}
+
+	if (!data || data?.length === 0) {
+		return <MissingData message="No SwissProt annotations found" />;
 	}
 
 	return (

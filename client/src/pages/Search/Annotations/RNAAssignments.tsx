@@ -1,6 +1,7 @@
 import type { TranscriptID } from "definitions";
 import Annotation from "../../../components/Annotation";
 import { trpc } from "../../../services";
+import MissingData from "../../../components/MissingData";
 
 const Component = ({ transcriptId }: { transcriptId: TranscriptID }) => {
 	const { isLoading, data } = trpc.annotations.mrna.useQuery(transcriptId);
@@ -9,8 +10,12 @@ const Component = ({ transcriptId }: { transcriptId: TranscriptID }) => {
 		return <h1>Loading</h1>;
 	}
 
+	if (data.length === 0) {
+		return <MissingData message="No mRNA assignments found" />;
+	}
+
 	return (
-		<table className="table min-w-fit rounded-none border-b bg-base-100">
+		<table className="table min-w-fit rounded-none bg-base-100">
 			<thead>
 				<tr className="[&>*:not(:last-child)]:border-r [&>*]:p-1 [&>*]:align-top">
 					<th>Accession</th>

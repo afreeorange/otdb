@@ -1,12 +1,17 @@
 import type { TranscriptID } from "definitions";
 import Annotation from "../../../components/Annotation";
 import { trpc } from "../../../services";
+import MissingData from "../../../components/MissingData";
 
 const Component = ({ transcriptId }: { transcriptId: TranscriptID }) => {
 	const { isLoading, data } = trpc.annotations.unigene.useQuery(transcriptId);
 
 	if (isLoading || !data) {
 		return <h1>Loading</h1>;
+	}
+
+	if (!data.length) {
+		return <MissingData message="No Unigene data found" />;
 	}
 
 	return (

@@ -1,6 +1,7 @@
 import type { TranscriptID } from "definitions";
 import Annotation from "../../../components/Annotation";
 import { trpc } from "../../../services";
+import MissingData from "../../../components/MissingData";
 
 const Component = ({ transcriptId }: { transcriptId: TranscriptID }) => {
 	const { isLoading, data } = trpc.annotations.pathways.useQuery(transcriptId);
@@ -10,7 +11,7 @@ const Component = ({ transcriptId }: { transcriptId: TranscriptID }) => {
 	}
 
 	if (data.length === 0) {
-		return <h1>No pathways found</h1>;
+		return <MissingData message="No pathway data available" />;
 	}
 
 	return (

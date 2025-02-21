@@ -16,7 +16,7 @@ const Component = ({
 }) => (
 	<div className="join">
 		<div className="badge join-item badge-outline badge-sm whitespace-nowrap border">
-			Chromosome {chromosome}
+			Chromosome {chromosome.replace("chr", "")}
 		</div>
 		<div className="badge join-item badge-outline badge-sm font-bold">
 			{strand === "+" ? <AiOutlinePlus /> : <AiOutlineMinus />}

@@ -1,6 +1,7 @@
 import type { GoTermsAnnotation, TranscriptID } from "definitions";
 import Annotation from "../../../components/Annotation";
 import { trpc } from "../../../services";
+import MissingData from "../../../components/MissingData";
 
 const Nope = () => (
 	<div className="w-full text-center text-sm">No Annotations</div>
@@ -11,7 +12,7 @@ const DataTable = ({
 }: {
 	data: GoTermsAnnotation[keyof GoTermsAnnotation];
 }) => (
-	<table className="table min-w-fit">
+	<table className="table w-full">
 		<thead>
 			<tr className="[&>*:not(:last-child)]:border-r [&>*]:p-1">
 				<th className="w-2/12">ID</th>
@@ -46,6 +47,14 @@ const Component = ({ transcriptId }: { transcriptId: TranscriptID }) => {
 
 	if (isLoading || !data) {
 		return <h1>Loading</h1>;
+	}
+
+	if (
+		data.BIOLOGICAL_PROCESS.length === 0 &&
+		data.CELLULAR_COMPONENT.length === 0 &&
+		data.MOLECULAR_FUNCTION.length === 0
+	) {
+		return <MissingData message="No GO Term annotations for this Transcript" />;
 	}
 
 	return (
