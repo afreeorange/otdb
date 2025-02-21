@@ -7,20 +7,23 @@ import clsx from "clsx";
 import { Footer } from "../components/Footer";
 import { SITE_NAME } from "../constants";
 import { FiArrowRight } from "react-icons/fi";
-import { NAVIGATION } from "../components/Header";
+import { NAVIGATION, type NavigationElement } from "../components/Header";
 import type { SearchType } from "definitions";
 
-const Card: React.FC<{
-	text: string;
-	uri: string;
-	icon: JSX.Element;
-}> = ({ text, uri, icon }) => (
+const Card: React.FC<NavigationElement> = ({ text, textSmall, uri, icon }) => (
 	<a
 		href={`${uri}`}
 		className="card w-full cursor-pointer border p-3 pb-2 transition-all"
 	>
 		<div className="mb-2 [&>*]:h-8 [&>*]:w-8">{icon}</div>
-		<span>{text}</span>
+		{textSmall ? (
+			<>
+				<span className="hidden md:inline-block">{text}</span>
+				<span className="md:hidden">{textSmall}</span>
+			</>
+		) : (
+			<span>{text}</span>
+		)}
 	</a>
 );
 
@@ -68,7 +71,7 @@ const Home = () => {
 						</div>
 
 						<div className="mt-2 flex md:place-items-center gap-3">
-							<div className="w-20">search by</div>
+							<div className="w-24">search by</div>
 							<div className="join join-vertical md:join-horizontal text-left w-full md:w-auto">
 								<button
 									type="button"
@@ -104,7 +107,7 @@ const Home = () => {
 						</div>
 
 						<div className="mt-2 flex md:place-items-center gap-3">
-							<div className="w-20">from the</div>
+							<div className="w-24">from the</div>
 							<div className="join join-vertical md:join-horizontal text-left w-full md:w-auto">
 								<button
 									type="button"
@@ -129,14 +132,11 @@ const Home = () => {
 							</div>
 						</div>
 
-						<div className="my-6 flex gap-4 border-dotted py-6">
+						<div
+							className={`border-t my-6 grid grid-rows-1 grid-cols-${NAVIGATION.length} gap-4 border-dotted py-6`}
+						>
 							{NAVIGATION.map((_) => (
-								<Card
-									icon={_.icon}
-									key={`card-${_.uri}`}
-									text={_.text}
-									uri={_.uri}
-								/>
+								<Card {..._} key={_.uri} />
 							))}
 						</div>
 

@@ -16,7 +16,7 @@ const Component = ({ transcriptId }: { transcriptId: TranscriptID }) => {
 	}
 
 	return (
-		<table className="table min-w-fit rounded-none border-b bg-base-100">
+		<table className="table min-w-fit rounded-none bg-base-100">
 			<thead>
 				<tr className="[&>*:not(:last-child)]:border-r [&>*]:p-1 [&>*]:align-top">
 					<th className="w-1/6">Accession</th>
