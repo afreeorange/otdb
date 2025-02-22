@@ -66,7 +66,9 @@ const Home = () => {
 								}
 								className="btn btn-xl join-item"
 							>
-								Search <FiArrowRight className="inline" />
+								<span className="hidden md:inline-block">Search</span>
+								<span className="md:hidden">Go</span>{" "}
+								<FiArrowRight className="inline" />
 							</button>
 						</div>
 
@@ -132,9 +134,7 @@ const Home = () => {
 							</div>
 						</div>
 
-						<div
-							className={`border-t my-6 grid grid-rows-1 grid-cols-${NAVIGATION.length} gap-4 border-dotted py-6`}
-						>
+						<div className="border-t my-6 flex gap-4 border-dotted py-6">
 							{NAVIGATION.map((_) => (
 								<Card {..._} key={_.uri} />
 							))}

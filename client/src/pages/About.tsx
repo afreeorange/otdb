@@ -177,7 +177,7 @@ const About = () => (
 					under their very generous free-tier.
 				</p>
 
-				<div className="my-4 flex flex-wrap gap-4">
+				<div className="my-4 grid grid-cols-2 md:flex md:flex-wrap gap-4">
 					{stack.map((_) => (
 						<TechTile key={`tech-tile-${_.uri}`} {..._} />
 					))}

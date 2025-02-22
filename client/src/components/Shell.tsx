@@ -17,7 +17,7 @@ const Shell = ({
 		{!noHeader && <Header />}
 		<div
 			className={clsx({
-				"mx-auto mb-4 mt-8 max-w-4xl px-2": padContent,
+				"mx-auto mb-4 mt-8 max-w-4xl px-4": padContent,
 			})}
 		>
 			{children}
