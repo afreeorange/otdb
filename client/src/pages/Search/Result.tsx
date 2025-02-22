@@ -61,8 +61,8 @@ const Component = ({
 						/>
 					</div>
 				</div>
-				<div className="flex flex-col self-center gap-y-0.5 mt-1">
-					<div className="text-sm">
+				<div className="flex flex-col self-center mt-1 border-l px-4 border-dotted">
+					<div>
 						Transcript #
 						<span
 							data-transcript-id={searchResult.transcript_id}
@@ -71,7 +71,7 @@ const Component = ({
 							{searchResult.transcript_id}
 						</span>
 					</div>
-					<div className="text-sm">
+					<div>
 						<span className="font-bold">{searchResult.total_probes}</span>{" "}
 						Probes
 					</div>
