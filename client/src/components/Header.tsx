@@ -13,10 +13,14 @@ export type NavigationElement = {
 	textSmall?: string;
 };
 
+/**
+ * TODO: Dedupe. One Source of Truth for all routes. I'm beginning to see
+ *       the Light here...
+ */
 export const NAVIGATION: NavigationElement[] = [
 	{
 		icon: <TbDna />,
-		uri: "/tissues",
+		uri: "/expression",
 		text: "Gene Expression",
 		textSmall: "Genes",
 	},

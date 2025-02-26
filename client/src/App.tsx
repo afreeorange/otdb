@@ -9,7 +9,7 @@ const Home = loadable(() => import("./pages/Home"));
 const NotFound = loadable(() => import("./pages/404"));
 const Paper = loadable(() => import("./pages/Paper"));
 const Search = loadable(() => import("./pages/Search"));
-const Tissues = loadable(() => import("./pages/Tissues"));
+const Expression = loadable(() => import("./pages/Expression"));
 
 const App: React.FC = () => (
 	<ServiceProvider>
@@ -17,7 +17,7 @@ const App: React.FC = () => (
 			<Routes>
 				<Route index element={<Home />} />
 				<Route path="/search/:term" element={<Search />} />
-				<Route path="/tissues" element={<Tissues />} />
+				<Route path="/expression" element={<Expression />} />
 				<Route path="/about" element={<About />} />
 				<Route path="/paper" element={<Paper />} />
 				<Route path="*" element={<NotFound />} />
