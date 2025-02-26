@@ -1,6 +1,6 @@
 # The Ocular Tissue Database
 
-⚠️ Work in progress, will be released mid-February.
+⚠️ Work in progress. I use this as a way to experiment and learn so this might be the case for a while 😄
 
 Here are some screenshots:
 
