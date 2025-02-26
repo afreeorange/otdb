@@ -6,11 +6,12 @@
   "license": "MIT",
   "scripts": {
     "clean": "rm -rf dist",
-    "lint": "biome lint client/src/ server/src/ definitions/",
-    "lint:fix": "biome lint --write client/src/ server/src/ definitions/",
-    "format": "biome format client/src/ server/src/ definitions/",
+    "dev": "pnpm -r --parallel run dev",
+    "fetch-db": "curl --output data/otdb.sqlite https://public.nikhil.io/otdb/otdb.sqlite",
     "format:fix": "biome format --write client/src/ server/src/ definitions/",
-    "dev": "pnpm -r --parallel run dev"
+    "format": "biome format client/src/ server/src/ definitions/",
+    "lint:fix": "biome lint --write client/src/ server/src/ definitions/",
+    "lint": "biome lint client/src/ server/src/ definitions/"
   },
   "dependencies": {
     "@ebay/nice-modal-react": "^1.2.13",

@@ -15,6 +15,14 @@ Here are some screenshots:
 
 This is a Monorepo managed by pNPM.
 
+```bash
+# Install dependencies
+pnpm i
+
+# Fetch the database for local development
+pnpm fetch-db
+```
+
 ### Client
 
 ```css
