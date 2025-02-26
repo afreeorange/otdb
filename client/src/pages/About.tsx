@@ -6,9 +6,11 @@ import {
 	SiSqlite,
 	SiTailwindcss,
 	SiTrpc,
+	SiTurso,
 	SiVite,
 } from "react-icons/si";
-import { AiOutlineFire } from "react-icons/ai";
+import { FaAws } from "react-icons/fa";
+import { PiGithubLogo } from "react-icons/pi";
 import { Helmet } from "react-helmet";
 import type React from "react";
 
@@ -69,7 +71,7 @@ const stack: Tech[] = [
 		uri: "https://circleci.com/",
 	},
 	{
-		icon: <SiPnpm />,
+		icon: <PiGithubLogo />,
 		text: "Github",
 		uri: "https://github.com/",
 	},
@@ -77,6 +79,16 @@ const stack: Tech[] = [
 		icon: <SiPnpm />,
 		text: "pnpm",
 		uri: "https://pnpm.io/",
+	},
+	{
+		icon: <SiTurso />,
+		text: "Turso",
+		uri: "https://turso.tech/",
+	},
+	{
+		icon: <FaAws />,
+		text: "AWS",
+		uri: "https://aws.amazon.com/",
 	},
 ];
 

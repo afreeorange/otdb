@@ -24,12 +24,12 @@ export default () => {
 					<span className="font-normal">{TISSUE_NAMES[tissue]}</span>
 				</h1>
 				<p className="pb-6 pt-4">
-					The tables below list the top 100 most expressed genes in a given
-					tissue, sorted by PLIER values. You can download all &asymp;50,000
-					data points for a given tissue by clicking the{" "}
+					The tables below list the <strong>Top 100</strong> most expressed
+					genes in a given tissue, sorted by PLIER values. You can download all
+					&asymp;50,000 data points for a given tissue by clicking the{" "}
 					<HiOutlineArrowDownCircle className="mb-0.5 inline h-5 w-5 " /> next
 					to its name. You can also download all &asymp;500,000 expression
-					values across all tissues. All downloads are gzipped JSON.
+					values across all tissues. All downloads are in JSON.
 				</p>
 
 				<div className="flex">
