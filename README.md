@@ -1,9 +1,13 @@
 # The Ocular Tissue Database
 
-> [!WARNING]
-> Obsolete. [Please see the Human Eye Transciptome Atlas](https://www.eye-transcriptome.com/) instead.
+The **Ocular Tissue Database (OTDB)** is a searchable resource of exon-level gene expression profiles across ten healthy human ocular tissues, originally described in:
 
-I use this project as a way to experiment with various technologies. At the moment: React + Tailwind + PostCSS + tRPC + Hono + SQLite + Turso.
+> Wagner AH, Anand N, Wang W-H, Chatterton JE, Sun D, Shepard A, Jacobson N, Pang I-H, DeLuca A, Casavant TL, Sheetz TE, Mullins R, Braun TA, Clark AF. **Exon-level Expression Profiling of Ocular Tissues.** *Experimental Eye Research.* 2013;105:105–111. https://doi.org/10.1016/j.exer.2013.03.004
+
+> [!WARNING]
+> **This database is obsolete.** Please use the **Human Eye Transcriptome Atlas** instead: https://www.eye-transcriptome.com/
+
+I now use this project as a playground for experimenting with new technologies. The current implementation uses React, Tailwind, PostCSS, tRPC, Hono, SQLite, and Turso.
 
 ## Screenshots
 
