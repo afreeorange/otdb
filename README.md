@@ -1,8 +1,11 @@
 # The Ocular Tissue Database
 
-⚠️ Work in progress. I use this as a way to experiment and learn so this might be the case for a while 😄
+> [!WARNING]
+> Obsolete. [Please see the Human Eye Transciptome Atlas](https://www.eye-transcriptome.com/) instead.
 
-Here are some screenshots:
+I use this project as a way to experiment with various technologies. At the moment: React + Tailwind + PostCSS + tRPC + Hono + SQLite + Turso.
+
+## Screenshots
 
 ![](https://public.nikhil.io/papers/otdb-screens/01.png)
 ![](https://public.nikhil.io/papers/otdb-screens/02.png)
@@ -11,7 +14,7 @@ Here are some screenshots:
 ![](https://public.nikhil.io/papers/otdb-screens/05.png)
 ![](https://public.nikhil.io/papers/otdb-screens/06.png)
 
-## Development
+## Development Notes
 
 This is a Monorepo managed by pNPM.
 
